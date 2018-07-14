@@ -11,15 +11,18 @@ sourcePath="/NAS/cloud"
 destPath="/media/Backup/Nextcloud" 
 > Folder in which the backup will be crated. TAR & SQL Dump well be there.
 
+
 - DATA PART
 
 nameData="nextcloud_data.tar.gz" 
 > Name of backup TAR file. Script will add the current date (YYYY-MM-DD_) in front of the file name!
 
+
 - SQL PART
 
 nameSQL="nextcloud_mysql.sql" 
 > Name of backup SQL Dump. Script will add the current date (YYYY-MM-DD_)  in front of the file name!
+
 
 - DELETE Backup older than 4 Weeks
 
@@ -28,10 +31,12 @@ find $destPath -maxdepth 1 -type f -iname '*.tar.gz' -mtime +28 -exec rm {} \;
 find $destPath -maxdepth 1 -type f -iname '*.sql' -mtime +28 -exec rm {} \; 
 > Change the number 28 if you want the backups to last longer or less long before deletion
 
+
 - BACKUP PART
 
 mysqldump --lock-tables -h 127.0.0.1 -u MYSQLUSER -p'PASSWORD' NEXTCLOUDDB > $destPath/$fileNameSQL 
 > Change all the parts in capital letters!
+
 
 # Cronjob:
 Create a cronjob for ROOT to run the script every week (Eg. Monday night):
