@@ -32,3 +32,8 @@ find $destPath -maxdepth 1 -type f -iname '*.sql' -mtime +28 -exec rm {} \;
 
 mysqldump --lock-tables -h 127.0.0.1 -u MYSQLUSER -p'PASSWORD' NEXTCLOUDDB > $destPath/$fileNameSQL 
 > Change all the parts in capital letters!
+
+# Cronjob:
+Create a cronjob for ROOT to run the script every week (Eg. Monday night):
+
+0 4 * * 1       /path/to/script/nextcloud-backup.sh >/dev/null 2>&1
