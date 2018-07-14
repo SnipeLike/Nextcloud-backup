@@ -3,6 +3,7 @@
 # Howto use:
 
 - Change the following enviroment variables how you like them:
+
 //VAR PART
 sourcePath="/NAS/cloud" >> Source Path, eg. whole nextcloud dir or just one user's data
 destPath="/media/Backup/Nextcloud" >> Folder in which the backup will be crated. TAR & SQL Dump well be there.
