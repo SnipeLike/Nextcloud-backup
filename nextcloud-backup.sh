@@ -9,7 +9,7 @@
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 #Var
-sourcePath="/cloud"
+sourcePath="/PATH/TO/nextcloud"
 destPath="/media/Backup/Nextcloud"
 curDate=$(date +"%Y-%m-%d")
 #	Data
